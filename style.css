@@ -134,7 +134,11 @@ h1 {
 }
 
 .links {
-  font-size: 12px;
+  font-size: 11.5px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .links a {
@@ -185,8 +189,8 @@ p {
 
 .promo-img-container {
   position: absolute;
-  right: -25px;
-  bottom: -45px;
+  right: -20px;
+  bottom: -70px;
   width: 145px;
   pointer-events: none;
 }
@@ -197,12 +201,10 @@ p {
   display: block;
 }
 
-/* Grand espace vide pour séparer le burger des bannières */
 .scroll-spacer {
   height: 280px;
 }
 
-/* Section des autres promotions (partiellement coupée en bas au scroll maximum) */
 .more-offers-section {
   border-top: 1px solid #eeeeee;
   padding-top: 24px;
