@@ -4,102 +4,106 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Offre Platine</title>
-  
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
-
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Offre Platine">
   <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-
-  <div class="loading-screen active" id="loadingScreen">
-    <div class="loading-content">
-      <div class="close-icon loading-close-icon" id="loadingCloseBtn">&#x2715;</div>
-      <div class="spinner"></div>
+  <div class="splash-screen" id="splashScreen">
+    <div class="splash-logo-container">
+      <span class="splash-mon">Mon</span>
+      <img src="MonMcDo.png" alt="McDonald's" class="splash-img">
     </div>
   </div>
 
-  <div class="container" id="mainContainer">
-    <div class="close-icon" id="closeBtn">&#x2715;</div>
-
-    <div class="badge-cueillette">
-      <img src="McCueillet.jpg" alt="Cueillette" class="tag-icon">
-      <span>Cueillette seulement</span>
+  <body>
+  <div class="lock-screen" id="lockScreen">
+    <div class="lock-card">
+      <div class="lock-logo">
+        <span class="mon-text">Mon</span>
+        <img src="MonMcDo.png" alt="McDonald's" class="header-logo-img">
+      </div>
+      <h2>Accès Restreint</h2>
+      <p>Veuillez entrer votre code d'accès pour déverrouiller l'offre Platine.</p>
+      <input type="text" id="accessCodeInput" placeholder="Entrez votre code..." autocomplete="off">
+      <button id="unlockBtn">Déverrouiller</button>
+      <p class="lock-error" id="lockError"></p>
     </div>
+  </div>
 
-    <h1>Rabais de 50 % sur<br>présentation de la<br>carte du programme<br>Platine</h1>
-
-    <div class="period-container">
-      <div class="period" id="periodText">Période de l'offre : Expire dans 3 jours</div>
-      <div class="links">
-        <a href="#" id="modalitesLink">Voir les modalités de cette offre</a>
-        <span class="separator">|</span>
-        <a href="#" id="restaurantsLink">Restaurants participants</a>
+  <div class="pwa-install-overlay" id="pwaInstallNotice">
+    <div class="pwa-card">
+      <h2>Installation requise</h2>
+      <p>Pour utiliser l'offre Platine, veuillez ajouter cette application à votre écran d'accueil :</p>
+      <div class="instructions-box">
+        <div class="device-group">
+          <strong>Sur iPhone (Safari) :</strong>
+          <ol>
+            <li>Appuyez sur <strong>Partager</strong> <span class="icon-share">⎋</span> en bas.</li>
+            <li>Sélectionnez <strong>Sur l'écran d'accueil</strong> ➕.</li>
+          </ol>
+        </div>
+        <hr>
+        <div class="device-group">
+          <strong>Sur Android (Chrome) :</strong>
+          <ol>
+            <li>Appuyez sur les <strong>3 points</strong> ⋮ en haut à droite.</li>
+            <li>Sélectionnez <strong>Ajouter à l'écran d'accueil</strong>.</li>
+          </ol>
+        </div>
       </div>
+      <p class="small-text">Ouvrez ensuite l'application depuis votre écran d'accueil.</p>
     </div>
+  </div>
 
-    <p>
-      Obtenez un rabais de 50 % sur votre repas dans les restaurants McDonald's du Canada participants. Un repas comprend jusqu'à quatre produits (à l'exception des produits/repas du Menu McValeur et de la boîte de 20 McCroquettes). Ne peut être jumelée à aucune autre offre. Valable uniquement dans les restaurants McDonald's du Canada participants.
-    </p>
-
-    <p>
-      Veuillez présenter cette offre au comptoir et demander au préposé de faire appliquer le rabais par le gérant. Cette offre s'applique exclusivement au comptoir, en restaurant. Elle ne s'applique pas au service-au-volant, aux bornes de commande, à la commande mobile ni à la livraison. Cette offre est exclusivement réservée aux employés de McDonald's du Canada et de ses franchisés.
-    </p>
-
-    <div class="promo-card" id="promoCard">
-      <div class="promo-subtitle">CARTE DU PROGRAMME PLATINE</div>
-      <div class="promo-title">Rabais<br>de 50 %</div>
-
-      <div class="promo-img-container">
-        <img src="McImage.jpg" alt="Repas McDonald's">
+  <div class="view active" id="mainView">
+    <div class="container">
+      <div class="close-icon" id="closeBtn">&#x2715;</div>
+      <div class="badge-cueillette">
+        <img src="McCueillet.jpg" alt="Cueillette" class="tag-icon">
+        <span>Cueillette seulement</span>
       </div>
-    </div>
-
-    <div class="scroll-spacer"></div>
-
-    <div class="more-offers-section">
-      <h2 class="section-title">Autres offres et menus exclusifs</h2>
-
-      <div class="menu-footer-banner">
-        <div class="footer-menu-img">
-          <img src="McImage.jpg" alt="Menu McDo">
-        </div>
-        <div class="footer-menu-text">
-          <span>Découvrez les nouveaux menus de saison</span>
-          <small>Disponible dans les restaurants participants</small>
+      <h1>Rabais de 50 % sur<br>présentation de la<br>carte du programme<br>Platine</h1>
+      <div class="period-container">
+        <div class="period" id="periodText">Période de l'offre : Expire dans 3 jours</div>
+        <div class="links">
+          <a href="#" id="modalitesLink">Voir les modalités de cette offre</a>
+          <span class="separator">|</span>
+          <a href="#" id="restaurantsLink">Restaurants participants</a>
         </div>
       </div>
-
-      <div class="menu-footer-banner">
-        <div class="footer-menu-img">
-          <img src="McCueillet.jpg" alt="Offre McCafé">
-        </div>
-        <div class="footer-menu-text">
-          <span>Programme de fidélité McCafé</span>
-          <small>Cumulez des points à chaque commande</small>
-        </div>
-      </div>
-
-      <div class="menu-footer-banner">
-        <div class="footer-menu-img">
-          <img src="McImage.jpg" alt="McDo+">
-        </div>
-        <div class="footer-menu-text">
-          <span>Avantages exclusifs application McDo+</span>
-          <small>Commandes mobiles et récompenses</small>
+      <p>
+        Obtenez un rabais de 50 % sur votre repas dans les restaurants McDonald's du Canada participants. Un repas comprend jusqu'à quatre produits (à l'exception des produits/repas du Menu McValeur et de la boîte de 20 McCroquettes). Ne peut être jumelée à aucune autre offre. Valable uniquement dans les restaurants McDonald's du Canada participants.
+      </p>
+      <p>
+        Veuillez présenter cette offre au comptoir et demander au préposé de faire appliquer le rabais par le gérant. Cette offre s'applique exclusivement au comptoir, en restaurant. Elle ne s'applique pas au service-au-volant, aux bornes de commande, à la commande mobile ni à la livraison. Cette offre est exclusivement réservée aux employés de McDonald's du Canada et de ses franchisés.
+      </p>
+      <div class="promo-card" id="promoCard">
+        <div class="promo-subtitle">CARTE DU PROGRAMME PLATINE</div>
+        <div class="promo-title">Rabais<br>de 50 %</div>
+        <div class="promo-img-container">
+          <img src="McImage.jpg" alt="Repas McDonald's">
         </div>
       </div>
     </div>
   </div>
-  
-  <div class="modal-overlay" id="infoModal">
-    <div class="modal-content">
-      <h3 id="modalTitle">Modalités de l'offre</h3>
-      <p id="modalBody">Cette offre est valide sur présentation de la carte Platine auprès du gérant en restaurant.</p>
-      <button class="modal-close-btn" id="modalClose">Fermer</button>
+
+  <div class="view" id="subView">
+    <div class="header-nav">
+      <div class="back-btn" id="backBtn">&#x276e;</div>
+      <div class="logo-container">
+        <span class="mon-text">Mon</span>
+        <img src="MonMcDo.png" alt="McDonald's" class="header-logo-img">
+      </div>
+      <div class="header-placeholder"></div>
+    </div>
+    <div class="subView-content">
+      <h2 id="pageTitle">Titre</h2>
+      <div id="pageBody">Contenu de la page</div>
     </div>
   </div>
 

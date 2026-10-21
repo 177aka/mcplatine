@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mcdonalds-platine-v8';
+const CACHE_NAME = 'mcdonalds-platine-v27';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -6,7 +6,8 @@ const ASSETS_TO_CACHE = [
   './app.js',
   './manifest.json',
   './McCueillet.jpg',
-  './McImage.jpg'
+  './McImage.jpg',
+  './MonMcDo.png'
 ];
 
 self.addEventListener('install', event => {
@@ -15,6 +16,22 @@ self.addEventListener('install', event => {
       return cache.addAll(ASSETS_TO_CACHE);
     })
   );
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(
+        keys.map(key => {
+          if (key !== CACHE_NAME) {
+            return caches.delete(key);
+          }
+        })
+      );
+    })
+  );
+  self.clients.claim();
 });
 
 self.addEventListener('fetch', event => {
