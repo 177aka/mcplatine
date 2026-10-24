@@ -20,7 +20,6 @@
     </div>
   </div>
 
-  <body>
   <div class="lock-screen" id="lockScreen">
     <div class="lock-card">
       <div class="lock-logo">
@@ -28,10 +27,30 @@
         <img src="MonMcDo.png" alt="McDonald's" class="header-logo-img">
       </div>
       <h2>Accès Restreint</h2>
-      <p>Veuillez entrer votre code d'accès pour déverrouiller l'offre Platine.</p>
-      <input type="text" id="accessCodeInput" placeholder="Entrez votre code..." autocomplete="off">
+      <p>Veuillez entrer votre code de licence pour déverrouiller l'offre Platine.</p>
+      <input type="text" id="accessCodeInput" placeholder="Entrez votre licence..." autocomplete="off">
       <button id="unlockBtn">Déverrouiller</button>
+      <p class="loading-steps" id="loadingSteps"></p>
       <p class="lock-error" id="lockError"></p>
+
+      <div class="lock-extras">
+        <h3>Besoin d'aide ou d'une licence ?</h3>
+        <div class="snap-box">
+          Contacte <strong>qcplgstarz</strong> sur Snapchat pour toute question ou achat :<br>
+          <a href="https://www.snapchat.com/add/qcplgstarz" target="_blank">Ouvrir Snapchat (qcplgstarz)</a>
+        </div>
+
+        <h3>Forfaits disponibles</h3>
+        <div class="forfaits-preview">
+          <div class="forfait-pill">1 Jour <span>2 $</span></div>
+          <div class="forfait-pill">1 Semaine <span>7 $</span></div>
+          <div class="forfait-pill">2 Mois <span>13 $</span></div>
+          <div class="forfait-pill">À Vie <span>34 $</span></div>
+        </div>
+        <p class="custom-time-notice">Temps personnalisé disponible sur demande via Snapchat.</p>
+
+        <button class="trial-btn" id="trialBtn">Demander 1 jour gratuit (1x par appareil)</button>
+      </div>
     </div>
   </div>
 
